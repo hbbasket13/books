@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서른, 둘 · 추천 도서</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 60px;
+  }
+  .wrap { width: 100%; max-width: 480px; }
+  .header { text-align: center; margin-bottom: 8px; }
+  .logo {
+    width: 76px; height: 76px; border-radius: 50%;
+    background: #f5f0e6; color: #1a1a1a;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px; font-weight: 800; margin: 0 auto 16px;
+    letter-spacing: -1px;
+  }
+  h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.5px; }
+  .handle { color: #8a8a8a; font-size: 14px; margin-top: 4px; }
+  .intro {
+    color: #b0b0b0; font-size: 14px; line-height: 1.6;
+    text-align: center; margin: 18px auto 28px; max-width: 360px;
+  }
+  .card {
+    display: flex; align-items: center; gap: 14px;
+    background: #161616; border: 1px solid #262626;
+    border-radius: 16px; padding: 16px 18px; margin-bottom: 12px;
+    text-decoration: none; color: inherit;
+    transition: transform .12s ease, border-color .12s ease, background .12s ease;
+  }
+  .card:active { transform: scale(0.98); background: #1c1c1c; border-color: #3a3a3a; }
+  .card .num {
+    flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px;
+    background: #232323; color: #d8b26e;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 700;
+  }
+  .card .txt { flex: 1; min-width: 0; }
+  .card .who { font-size: 12px; color: #d8b26e; font-weight: 600; margin-bottom: 3px; }
+  .card .title { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
+  .card .arrow { flex-shrink: 0; color: #666; font-size: 18px; }
+  .notice {
+    margin-top: 26px; text-align: center;
+    color: #6a6a6a; font-size: 12px; line-height: 1.6;
+  }
+  .footer { margin-top: 34px; text-align: center; }
+  .footer a {
+    color: #8a8a8a; font-size: 13px; text-decoration: none;
+    border: 1px solid #2a2a2a; padding: 9px 20px; border-radius: 999px;
+    display: inline-block; transition: border-color .12s;
+  }
+  .footer a:active { border-color: #4a4a4a; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="logo">둘</div>
+      <h1>서른, 둘 · 추천 도서</h1>
+      <div class="handle">@seorundul</div>
+    </div>
+    <p class="intro">스레드에서 소개한 인물들의 이야기를<br>더 깊이 담은 책들을 모았어요.</p>
+
+    <a class="card" href="https://link.coupang.com/a/fEWLQhadky" target="_blank" rel="noopener">
+      <div class="num">1</div>
+      <div class="txt">
+        <div class="who">빅터 프랭클</div>
+        <div class="title">죽음의 수용소에서</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="card" href="https://link.coupang.com/a/fEWPh6r24G" target="_blank" rel="noopener">
+      <div class="num">2</div>
+      <div class="txt">
+        <div class="who">전형필</div>
+        <div class="title">간송 전형필</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="card" href="https://link.coupang.com/a/fEWSyVpGqO" target="_blank" rel="noopener">
+      <div class="num">3</div>
+      <div class="txt">
+        <div class="who">젠슨 황</div>
+        <div class="title">젠슨 황: 엔비디아 웨이</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="card" href="https://link.coupang.com/a/fEWWeWC83E" target="_blank" rel="noopener">
+      <div class="num">4</div>
+      <div class="txt">
+        <div class="who">카탈린 카리코</div>
+        <div class="title">돌파의 시간</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="card" href="https://link.coupang.com/a/fEW16lvZe0" target="_blank" rel="noopener">
+      <div class="num">5</div>
+      <div class="txt">
+        <div class="who">유일한</div>
+        <div class="title">유일한 이야기</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <p class="notice">이 페이지의 링크는 쿠팡 파트너스 활동의 일환으로,<br>구매 시 일정액의 수수료를 제공받습니다.</p>
+
+    <div class="footer">
+      <a href="https://www.threads.com/@seorundul" target="_blank" rel="noopener">← 스레드로 돌아가기</a>
+    </div>
+  </div>
+</body>
+</html>
