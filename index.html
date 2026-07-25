@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서른, 둘 · 오늘의 책장</title>
+<style>
+  :root { --gold:#d8b26e; --bg:#0b0b0d; --card:#17171b; --card2:#1e1e24; --line:#2a2a31; --sub:#9a9aa5; }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%, #16161c 0%, var(--bg) 55%);
+    color:#f3f3f5; min-height:100vh; display:flex; justify-content:center;
+    padding:44px 18px 70px; line-height:1.5;
+  }
+  .wrap { width:100%; max-width:500px; }
+  .header { text-align:center; margin-bottom:6px; }
+  .logo {
+    width:72px; height:72px; border-radius:50%; background:#f5f0e6; color:#1a1a1a;
+    display:flex; align-items:center; justify-content:center; font-size:29px; font-weight:800;
+    margin:0 auto 14px; letter-spacing:-1px; box-shadow:0 6px 24px rgba(216,178,110,.18);
+  }
+  h1 { font-size:22px; font-weight:800; letter-spacing:-.6px; }
+  .handle { color:var(--sub); font-size:13.5px; margin-top:5px; }
+  .intro { color:#c2c2cc; font-size:14px; text-align:center; margin:16px auto 4px; max-width:340px; }
+  .section-label {
+    font-size:12px; font-weight:800; color:var(--gold); letter-spacing:1.2px;
+    margin:34px 2px 14px; text-transform:uppercase;
+    display:flex; align-items:center; gap:9px;
+  }
+  .section-label::before { content:""; width:16px; height:2px; background:var(--gold); border-radius:2px; }
+  .hero {
+    display:block; text-decoration:none; color:inherit;
+    background:linear-gradient(135deg,#20202a 0%,#17171d 100%);
+    border:1px solid #33333d; border-radius:20px; padding:20px 20px 18px;
+    margin-bottom:12px; transition:transform .14s ease, border-color .14s ease;
+  }
+  .hero:active { transform:scale(.985); border-color:#4a4a57; }
+  .hero .tag {
+    display:inline-block; font-size:11px; font-weight:800; color:#1a1a1a;
+    background:var(--gold); padding:3px 9px; border-radius:999px; letter-spacing:.3px; margin-bottom:11px;
+  }
+  .hero .title { font-size:19px; font-weight:800; letter-spacing:-.4px; }
+  .hero .hook { color:#c8c8d2; font-size:13.5px; margin-top:7px; }
+  .hero .go { color:var(--gold); font-size:13px; font-weight:700; margin-top:13px; display:inline-flex; align-items:center; gap:4px; }
+  .card {
+    display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit;
+    background:var(--card); border:1px solid var(--line); border-radius:15px;
+    padding:14px 16px; margin-bottom:9px;
+    transition:transform .12s ease, border-color .12s ease, background .12s ease;
+  }
+  .card:active { transform:scale(.98); background:var(--card2); border-color:#3a3a44; }
+  .card .body { flex:1; min-width:0; }
+  .card .title { font-size:15.5px; font-weight:700; letter-spacing:-.3px; }
+  .card .hook { color:var(--sub); font-size:12.5px; margin-top:3px; }
+  .card .arrow { flex-shrink:0; color:#5c5c66; font-size:20px; }
+  .notice { margin-top:34px; text-align:center; color:#66666f; font-size:11.5px; line-height:1.7; }
+  .footer { margin-top:26px; text-align:center; }
+  .footer a {
+    color:var(--sub); font-size:13px; text-decoration:none;
+    border:1px solid var(--line); padding:10px 22px; border-radius:999px; display:inline-block;
+  }
+  .footer a:active { border-color:#4a4a57; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="logo">둘</div>
+      <h1>오늘의 책장</h1>
+      <div class="handle">@seorundul</div>
+    </div>
+    <p class="intro">스레드에서 못다 한 이야기.<br>한 권이 바꾼 사람들의 기록을 골랐어요.</p>
+    <div class="section-label">이번 주 베스트</div>
+    <a class="hero" href="https://link.coupang.com/a/fEWLQhadky" target="_blank" rel="noopener">
+      <span class="tag">가장 많이 담아간 책</span>
+      <div class="title">죽음의 수용소에서</div>
+      <div class="hook">아우슈비츠에서 원고를 빼앗긴 정신과 의사가, 살아야 할 '이유'에 대해 남긴 답.</div>
+      <div class="go">읽으러 가기 →</div>
+    </a>
+    <a class="hero" href="https://link.coupang.com/a/fE8zRELwmO" target="_blank" rel="noopener">
+      <span class="tag">지금 가장 화제</span>
+      <div class="title">사피엔스</div>
+      <div class="hook">힘도 지능도 아니었다. 우리를 지구의 주인으로 만든 건 '함께 믿는 능력'이었다.</div>
+      <div class="go">읽으러 가기 →</div>
+    </a>
+    <div class="section-label">인물 — 한 사람의 선택</div>
+    <a class="card" href="https://link.coupang.com/a/fEWPh6r24G" target="_blank" rel="noopener">
+      <div class="body"><div class="title">간송 전형필</div><div class="hook">기와집 400채 값으로 나라의 보물을 지킨 사람</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fEW16lvZe0" target="_blank" rel="noopener">
+      <div class="body"><div class="title">유일한 이야기</div><div class="hook">전 재산을 사회에 남기고 떠난 유한양행 창업자</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fE8dXOv8xg" target="_blank" rel="noopener">
+      <div class="body"><div class="title">아나키스트 이회영</div><div class="hook">명동 땅을 다 팔아 독립군 3,500명을 길러낸 6형제</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fE8crX15Eq" target="_blank" rel="noopener">
+      <div class="body"><div class="title">우장춘</div><div class="hook">역적의 아들이라는 낙인을 딛고 한국 농업을 살리다</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fEWSyVpGqO" target="_blank" rel="noopener">
+      <div class="body"><div class="title">젠슨 황: 엔비디아 웨이</div><div class="hook">식당 접시닦이에서 세계 1위 기업 CEO까지</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fEWWeWC83E" target="_blank" rel="noopener">
+      <div class="body"><div class="title">돌파의 시간</div><div class="hook">30년 무명 끝에 노벨상을 받은 mRNA 과학자의 기록</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fE8aUCiKg8" target="_blank" rel="noopener">
+      <div class="body"><div class="title">왜 일하는가</div><div class="hook">78세에 파산 항공사를 살려낸 이나모리 가즈오의 일철학</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fE8hsngAge" target="_blank" rel="noopener">
+      <div class="body"><div class="title">히트 리프레시</div><div class="hook">'한물간 거인' MS를 3조 달러로 되살린 나델라의 방법</div></div><div class="arrow">›</div>
+    </a>
+    <div class="section-label">기업 — 흥망의 갈림길</div>
+    <a class="card" href="https://link.coupang.com/a/fE8i2S2pki" target="_blank" rel="noopener">
+      <div class="body"><div class="title">혁신기업의 딜레마</div><div class="hook">코닥·노키아는 왜 잘하면서도 무너졌나</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fE8oagJJcW" target="_blank" rel="noopener">
+      <div class="body"><div class="title">후지필름, 혼의 경영</div><div class="hook">필름이 사라지자 화장품·의약품 회사로 살아남다</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fE8qo0BWV2" target="_blank" rel="noopener">
+      <div class="body"><div class="title">닌텐도</div><div class="hook">화투 가게에서 시작해 137년을 버틴 회사</div></div><div class="arrow">›</div>
+    </a>
+    <div class="section-label">경제 — 지금 세상 읽기</div>
+    <a class="card" href="https://link.coupang.com/a/fE8yBUOOLQ" target="_blank" rel="noopener">
+      <div class="body"><div class="title">칩 워</div><div class="hook">반도체가 곧 권력이 된 시대의 지도</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fE8vlsRECy" target="_blank" rel="noopener">
+      <div class="body"><div class="title">환율의 미래</div><div class="hook">1,500원 시대, 돈의 흐름을 읽는 법</div></div><div class="arrow">›</div>
+    </a>
+    <a class="card" href="https://link.coupang.com/a/fE8xlnF79w" target="_blank" rel="noopener">
+      <div class="body"><div class="title">AI 이후의 세계</div><div class="hook">기술이 바꿀 다음 10년을 먼저 보다</div></div><div class="arrow">›</div>
+    </a>
+    <p class="notice">이 페이지의 링크는 쿠팡 파트너스 활동의 일환으로,<br>구매 시 일정액의 수수료를 제공받습니다.</p>
+    <div class="footer">
+      <a href="https://www.threads.com/@seorundul" target="_blank" rel="noopener">← 스레드로 돌아가기</a>
+    </div>
+  </div>
+</body>
+</html>
