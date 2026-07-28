@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서른, 둘 · 발행 관제탑</title>
+<style>
+  :root{
+    --gold:#d8b26e; --gold-dim:#8a7345; --bg:#0a0b0d; --panel:#141519;
+    --panel2:#1b1d22; --line:#2a2c33; --sub:#8b8d96; --text:#eceef2;
+    --live:#5ad19a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg); color:var(--text); min-height:100vh;
+    display:flex; justify-content:center; padding:32px 18px 60px; line-height:1.5;
+  }
+  .wrap{width:100%; max-width:560px;}
+  .top{display:flex; align-items:center; gap:12px; margin-bottom:4px;}
+  .logo{width:44px;height:44px;border-radius:50%;background:#f5f0e6;color:#1a1a1a;
+    display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;
+    letter-spacing:-1px; flex-shrink:0;}
+  .top h1{font-size:18px;font-weight:800;letter-spacing:-.4px;}
+  .top .sub{font-size:12.5px;color:var(--sub);margin-top:1px;}
+  .updated{margin:2px 0 22px 56px;font-size:11.5px;color:var(--gold-dim);}
+  .status{display:flex;align-items:center;gap:11px;
+    background:linear-gradient(135deg,#17251c,#141519);
+    border:1px solid #26402f;border-radius:14px;padding:15px 17px;margin-bottom:14px;}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--live);flex-shrink:0;
+    animation:pulse 2.2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(90,209,154,.45)}70%{box-shadow:0 0 0 9px rgba(90,209,154,0)}100%{box-shadow:0 0 0 0 rgba(90,209,154,0)}}
+  .status .st-main{font-size:14.5px;font-weight:700;}
+  .status .st-sub{font-size:12px;color:var(--sub);margin-top:2px;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px 12px;text-align:center;}
+  .card .num{font-size:27px;font-weight:800;color:var(--gold);letter-spacing:-1px;line-height:1;}
+  .card .lbl{font-size:11px;color:var(--sub);margin-top:6px;}
+  .sec{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:1px;
+    text-transform:uppercase;margin:0 2px 12px;display:flex;align-items:center;gap:8px;}
+  .sec::before{content:"";width:14px;height:2px;background:var(--gold);border-radius:2px;}
+  .next{background:linear-gradient(135deg,#20202a,#161016);border:1px solid #3a2f22;
+    border-radius:15px;padding:18px;margin-bottom:22px;}
+  .next .lead{font-size:12px;color:var(--gold);font-weight:700;margin-bottom:8px;}
+  .next .what{font-size:19px;font-weight:800;letter-spacing:-.3px;}
+  .next .cat{font-size:13px;color:#c8c8d2;margin-top:3px;}
+  .next .when{font-size:12.5px;color:var(--sub);margin-top:11px;padding-top:11px;border-top:1px solid #2e2820;}
+  .qlist{background:var(--panel);border:1px solid var(--line);border-radius:13px;overflow:hidden;}
+  .qrow{display:flex;align-items:center;gap:12px;padding:12px 15px;border-bottom:1px solid var(--line);}
+  .qrow:last-child{border-bottom:none;}
+  .qrow.up{background:#191b20;}
+  .qrow .qn{font-size:12px;color:var(--gold-dim);font-weight:800;width:22px;flex-shrink:0;
+    font-variant-numeric:tabular-nums;text-align:center;}
+  .qrow.up .qn{color:var(--gold);}
+  .qrow .qt{font-size:14px;font-weight:600;flex:1;}
+  .qrow .qc{font-size:11px;color:var(--sub);}
+  .qrow .flag{font-size:10px;font-weight:700;color:#1a1a1a;background:var(--gold);
+    border-radius:20px;padding:2px 9px;flex-shrink:0;}
+  .qrow .eta{font-size:11px;color:var(--gold-dim);flex-shrink:0;font-variant-numeric:tabular-nums;}
+  .rulebox{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:4px 0;margin-bottom:8px;}
+  .rule{display:flex;justify-content:space-between;padding:11px 16px;border-bottom:1px solid var(--line);font-size:13px;}
+  .rule:last-child{border-bottom:none;}
+  .rule .k{color:var(--sub);} .rule .v{font-weight:600;}
+  .note{margin-top:22px;font-size:11.5px;color:#5f616b;line-height:1.7;text-align:center;}
+  .foot{margin-top:18px;text-align:center;}
+  .foot a{color:var(--sub);font-size:12.5px;text-decoration:none;border:1px solid var(--line);
+    padding:9px 18px;border-radius:20px;display:inline-block;margin:4px 4px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="logo">둘</div>
+    <div>
+      <h1>발행 관제탑</h1>
+      <div class="sub">@seorundul · 스레드 자동 발행 현황</div>
+    </div>
+  </div>
+  <div class="updated" id="updated"></div>
+  <div class="status">
+    <div class="dot"></div>
+    <div>
+      <div class="st-main">자동 발행 작동 중</div>
+      <div class="st-sub">GitHub Actions가 매일 알아서 발행합니다</div>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="num" id="cQueue">–</div><div class="lbl">남은 글</div></div>
+    <div class="card"><div class="num" id="cDays">–</div><div class="lbl">발행 지속일</div></div>
+    <div class="card"><div class="num" id="cPace">2</div><div class="lbl">하루 발행</div></div>
+  </div>
+  <div class="sec">다음에 나갈 글</div>
+  <div class="next">
+    <div class="lead">큐 맨 앞 · 다음 발행 시 게시</div>
+    <div class="what" id="nextT">–</div>
+    <div class="cat" id="nextC">–</div>
+    <div class="when">발행 시각은 매일 08:00~23:30 사이에서 자동으로 정해집니다. 하루 2회, 최소 3.5시간 간격.</div>
+  </div>
+  <div class="sec">큐 재고 · 발행 순서</div>
+  <div class="qlist" id="qlist"></div>
+  <div class="sec">발행 규칙</div>
+  <div class="rulebox">
+    <div class="rule"><span class="k">하루 발행 수</span><span class="v">2묶음</span></div>
+    <div class="rule"><span class="k">발행 시간대</span><span class="v">08:00 ~ 23:30 (KST)</span></div>
+    <div class="rule"><span class="k">최소 간격</span><span class="v">3.5시간</span></div>
+    <div class="rule"><span class="k">발행 형태</span><span class="v">훅 1 + 답글 5 (6연속)</span></div>
+  </div>
+  <p class="note" id="drain"></p>
+  <div class="foot">
+    <a href="https://github.com/hbbasket13/threads-autopost/actions" target="_blank" rel="noopener">실행 기록 · 정확한 발행 시각</a>
+    <a href="https://www.threads.com/@seorundul" target="_blank" rel="noopener">스레드 가기</a>
+  </div>
+</div>
+<script>
+const QUEUE = [
+  {t:"정약용",       c:"인물"},
+  {t:"GE",           c:"기업 흥망사"},
+  {t:"인플레이션",    c:"경제"},
+  {t:"세종대왕",      c:"인물"},
+  {t:"소니",         c:"기업 흥망사"},
+  {t:"워런 버핏",     c:"인물"},
+  {t:"1% 성장",      c:"자기계발"},
+  {t:"레고",         c:"기업 흥망사"},
+  {t:"나이팅게일",    c:"인물"},
+  {t:"복리·72법칙",   c:"경제"},
+  {t:"마리 퀴리",     c:"인물"},
+  {t:"스타벅스",      c:"기업 흥망사"},
+  {t:"링컨",         c:"인물"},
+  {t:"헬렌 켈러",     c:"인물"},
+  {t:"GM",           c:"기업 흥망사"},
+  {t:"토이저러스",    c:"기업 흥망사"},
+  {t:"금리와 채권",   c:"경제"},
+  {t:"버블의 역사",   c:"경제"},
+  {t:"반 고흐",      c:"인물"},
+  {t:"인간관계론",    c:"책"},
+];
+const POSTS_PER_DAY = 2;
+function kstNow(){const n=new Date();return new Date(n.getTime()+(n.getTimezoneOffset()+540)*60000);}
+function pad(n){return String(n).padStart(2,"0");}
+function isoDate(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+const now=kstNow();
+const q=[...QUEUE];
+const days=Math.ceil(q.length/POSTS_PER_DAY);
+document.getElementById("cQueue").textContent=q.length;
+document.getElementById("cDays").textContent=days;
+document.getElementById("updated").textContent="업데이트 "+isoDate(now)+" "+pad(now.getHours())+":"+pad(now.getMinutes())+" (KST 기준)";
+if(q.length){document.getElementById("nextT").textContent=q[0].t;document.getElementById("nextC").textContent=q[0].c;}
+else{document.getElementById("nextT").textContent="큐가 비었습니다";document.getElementById("nextC").textContent="새 글을 추가해 주세요";}
+const ql=document.getElementById("qlist");
+q.forEach((item,i)=>{
+  const dayOffset=Math.floor(i/POSTS_PER_DAY);
+  let eta;
+  if(dayOffset===0) eta="오늘/내일";
+  else if(dayOffset===1) eta="약 1~2일 뒤";
+  else eta="약 "+dayOffset+"일 뒤";
+  const row=document.createElement("div");
+  row.className="qrow"+(i===0?" up":"");
+  row.innerHTML="<div class='qn'>"+(i+1)+"</div>"+
+    "<div class='qt'>"+item.t+"<div class='qc'>"+item.c+"</div></div>"+
+    (i===0?"<div class='flag'>다음</div>":"<div class='eta'>"+eta+"</div>");
+  ql.appendChild(row);
+});
+const drainDate=new Date(now.getTime()+(days-1)*86400000);
+document.getElementById("drain").innerHTML=
+  q.length? "현재 재고로 약 <b style='color:#d8b26e'>"+days+"일</b> ("+isoDate(drainDate).slice(5).replace("-","/")+"경까지) 발행됩니다.<br>큐가 떨어지기 전에 새 글을 채워 주세요."
+          : "발행할 글이 없습니다. 큐에 새 글을 추가해 주세요.";
+</script>
+</body>
+</html>
